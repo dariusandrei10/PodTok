@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-deep: #0b0c0e;      
+  --panel-bg: #13161c;     
+  --panel-border: rgba(255, 255, 255, 0.08); 
+  --text-main: #ededed;   
+  --text-muted: #848a96;    
+  --accent-btn: #e2e8f0;   
+  --accent-btn-hover: #ffffff;
+  --btn-text: #0b0c0e;     
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#root > div > div {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 580px;    
+  margin: 20px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;          
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+button {
+  background-color: var(--accent-btn);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.2s ease;
+  width: 100%;           
+}
+
+button:hover {
+  background-color: var(--accent-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#root > div > div > div {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
