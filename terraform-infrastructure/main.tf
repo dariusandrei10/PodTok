@@ -16,7 +16,7 @@ resource "azurerm_resource_group" "podtok" {
   tags = local.default_tags
 }
 
-resource "azurem_container_registry" "podtok"{
+resource "azurem_container_registry" "podtok" {
   name                = "podtokacr"
   resource_group_name = azurerm_resource_group.podtok.name
   location            = azurerm_resource_group.podtok.location

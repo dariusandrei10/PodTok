@@ -1,23 +1,23 @@
 variable "region" {
   description = "Azure infrastructure region"
-  type    = string
-  default = "westeurope"
+  type        = string
+  default     = "westeurope"
 }
 
 variable "app_name" {
   description = "Name of the application, used in Azure resource naming"
-  type    = string
-  default = "podtok"
+  type        = string
+  default     = "podtok"
 }
 
 variable "env" {
   description = "Application env"
-  type    = string
-  default = "dev"
+  type        = string
+  default     = "dev"
 }
 
 variable "location" {
   description = "Location short name "
-  type    = string
-  default = "we"
+  type        = string
+  default     = "we"
 }
