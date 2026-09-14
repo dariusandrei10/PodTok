@@ -22,7 +22,7 @@ resource "azurerm_container_registry" "podtok" {
   sku                 = "Basic"
   admin_enabled       = true
 
-  tags = local.default_tag
+  tags = local.default_tags
 }
 
 
