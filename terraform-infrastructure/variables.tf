@@ -1,7 +1,7 @@
 variable "region" {
   description = "Azure infrastructure region"
   type        = string
-  default     = "westeurope"
+  default     = "eastus"
 }
 
 variable "app_name" {
@@ -19,5 +19,5 @@ variable "env" {
 variable "location" {
   description = "Location short name "
   type        = string
-  default     = "we"
+  default     = "eus"
 }
