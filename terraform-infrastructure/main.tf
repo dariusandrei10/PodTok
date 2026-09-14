@@ -6,7 +6,6 @@ locals {
     owner       = "Darius Dragomir"
     app         = var.app
   }
-
 }
 
 resource "azurerm_resource_group" "podtok" {
@@ -16,14 +15,14 @@ resource "azurerm_resource_group" "podtok" {
   tags = local.default_tags
 }
 
-resource "azurem_container_registry" "podtok" {
+resource "azurerm_container_registry" "podtok" {
   name                = "podtokacr"
   resource_group_name = azurerm_resource_group.podtok.name
   location            = azurerm_resource_group.podtok.location
   sku                 = "Basic"
   admin_enabled       = true
 
-  tags = local.default_tag
+  tags = local.default_tags
 }
 
 
