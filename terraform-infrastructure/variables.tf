@@ -4,7 +4,7 @@ variable "region" {
   default     = "westeurope"
 }
 
-variable "app_name" {
+variable "app" {
   description = "Name of the application, used in Azure resource naming"
   type        = string
   default     = "podtok"
