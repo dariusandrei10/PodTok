@@ -90,8 +90,22 @@ def send_profile(request : AnalyzeRequest):
   raw_text = raw_text.replace("```json", "")
   raw_text = raw_text.replace("```", "")
   raw_text = raw_text.strip()
-  return json.loads(raw_text)#returns the answear to react(our frontend)
-  
+  final_result=json.loads(raw_text)#returns the answear to react(our frontend) as a dictonary
+  for segment in final_result["segments"]:
+      time_start=segment['start']
+      time_end=segment['end']
+      vect=time_start.split(":")
+      minutes=int(vect[0]) #transform the text in number
+      sec=int(vect[1])
+      segment['start']=minutes*60+sec
+      vect=time_end.split(":")
+      minutes=int(vect[0])
+      sec=int(vect[1]) 
+      segment['end']=minutes*60+sec
+
+  print("the results are:", final_result)
+      
   
   print("Profile received:" ,request.profile)
   print("Video received:", request.video_id)
+  return final_result

@@ -8,6 +8,7 @@ const App = () => {
   const [showFeed, setShowFeed] = useState(false)
   const [segments, setSegments] = useState([])// here we are going to have the real array from the backend
   const [loading, setLoading] = useState(false) // here we would have the ai status (if he is still processing or not)
+  const [videoId, setVideoId] = useState("") //
   const FormSent = async (profileText, VideoReceived) => { // we use async because we want to wait until we have a response 
     if (profileText.trim().length === 0) {
       alert("Please write something about yourself in the box !");
@@ -24,6 +25,7 @@ const App = () => {
       console.log("received response from Python:", response.data)
       setSegments(response.data.segments)
       setShowFeed(true)
+      setVideoId(VideoReceived)
     } catch (error) {
       console.error("Error:", error)
       alert("Error at server!")
@@ -49,7 +51,11 @@ const App = () => {
   else {
     return (
       <div>
-        <SegmentList segments={segments} onBackClick={()=> setShowFeed(false)} />
+        <SegmentList
+          segments={segments}
+          videoId={videoId}
+          onBackClick={() => setShowFeed(false)}
+        />
       </div>
     )
   }
