@@ -1,119 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
-:root {
-  color-scheme: dark;
-  --bg-deep: #0b0c0e;      
-  --panel-bg: #13161c;     
-  --panel-border: rgba(255, 255, 255, 0.08); 
-  --text-main: #ededed;   
-  --text-muted: #848a96;    
-  --accent-btn: #e2e8f0;   
-  --accent-btn-hover: #ffffff;
-  --btn-text: #0b0c0e;     
-}
+
 
 body {
-  background-color: var(--bg-deep);
-  color: var(--text-main);
-  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  margin: 0;
-  padding: 2rem 1rem;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  background-color: #08090B;
+  color: white;
+  font-family: 'Inter', sans-serif;
 }
 
-#root > div > div {
-  background-color: var(--panel-bg);
-  border: 1px solid var(--panel-border);
-  border-radius: 16px;
-  padding: 32px;
+
+
+/*  CUTIA MARE (Cardul)  */
+.segment-card {
+  background: #111318;
+  border: 3px solid #2A2E36;
+  border-radius: 20px;
   width: 100%;
-  max-width: 580px;    
-  margin: 20px auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  max-width: 1312px; 
+  margin-bottom: 30px;
+  margin-left: auto;   
+  margin-right: auto;
+  overflow: hidden; /* Daca video-ul depaseste marginile, taie colturile la rotund */
 }
 
-h1 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--text-main);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
+.backtoprofilebutton{
+  align-self: flex-start;
+   display: inline-flex;
+   margin-left: 10px;
+  align-items: left;
+  gap: 8px;
+  padding: 10px 14px;
 
-h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-textarea {
-  background-color: var(--bg-deep);
-  color: var(--text-main);
-  border: 1px solid var(--panel-border);
+  color: #a3a7b0;
+  background: transparent;
+  border: 1px solid #2a2e36;
   border-radius: 10px;
-  padding: 16px;
-  width: 100%;          
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.6;
-  resize: vertical;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
 
-textarea:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
-}
-
-textarea::placeholder {
-  color: var(--text-muted);
-}
-
-button {
-  background-color: var(--accent-btn);
-  color: var(--btn-text);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
+  transition: 0.2s ease;
+}  
+/* ce se intampla cand pui mouse ul pe el */
+.backtoprofilebutton:hover
+{ color: #ffffff;
+  background: #111318;
+  border-color: #444953;
+  transform: translateX(-2px);}
+.moretext{
+  text-align: center;
+  color: #696E78;     
+  font-size: 14px;
   margin-top: 20px;
-  transition: all 0.2s ease;
-  width: 100%;           
+  margin-bottom: 60px;  
 }
 
-button:hover {
-  background-color: var(--accent-btn-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+
+/* --- CUTIA HEADER (Numar + Titlu) --- */
+.segment-HEADER {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 40px 40px 40px 40px; 
 }
 
-button:active {
-  transform: translateY(0);
+.segment-number {
+  font-family: 'NanumGothic';
+  font-weight: 400;
+  font-size: 17px;
+  color: #C7F36B; 
+  margin-top: -1px; 
 }
 
-#root > div > div > div {
-  background-color: var(--bg-deep);
-  border: 1px solid var(--panel-border);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
+.segment-HEADER h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+  color: #F5F3EE;
+  line-height: 120%;
+  margin: 0;
+  margin-left: -5px; /* Stergem marginile pe care h3 le are din fabrica in browser */
+}
+
+/* CUTIA EXPLICATIE (Why Relevant)*/
+.segment-whyrelevant {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 24px 24px 24px;
+  
+}
+
+/* Titlul mic "Why Relevant:" (In react am pus h1, asa ca stilizam h1) */
+.segment-whyrelevant h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #696E78;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.segment-whyrelevant p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #A3A7B0;
+  line-height: 150%;
+  margin: 0;
+}
+
+/* --- CUTIA VIDEO --- */
+.video-player {
+  width: 100%;
 }
