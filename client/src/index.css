@@ -326,7 +326,7 @@ display: flex;
   gap: 16px; /* Spatiul intre patratul negru si texte */
   
 }
-
+/* 
 .badge01{
   background-color: #08090B;
   color: white;
@@ -338,7 +338,7 @@ display: flex;
   align-items: center;
   font-weight: bold;
   flex-shrink: 0; /* Impiedica strivirea patratului */
-}
+/*  */
 
 .textgroup {
   display: flex;
@@ -374,23 +374,27 @@ display: flex;
   margin-top: 20px;
   margin-bottom: 12px;
 }
-
+/* Asigurăm că întregul container ocupă lățimea maximă disponibilă */
+.profile-text {
+  width: 100%; /* ADAUGAT: Pentru ca elementele din interior să aibă pe ce să se lățească */
+}
 
 .profile-text textarea {
-  background-color: #f8f9fabd; /* Un gri extrem de deschis si curat */
-  border: 1px solid rgba(42, 46, 54, 0.1); /* O bordura abia vizibila */
+  background-color: #f8f9fabd; 
+  border: 1px solid rgba(42, 46, 54, 0.1); 
   border-radius: 12px;
   padding: 20px;
   width: 100%;
-  min-height: 150px; /* Spatiu generos pentru scris */
+  min-height: 150px; 
   font-family: 'Inter', sans-serif;
   font-size: 15px;
-  color: black; /* Textul pe care il scrie utilizatorul va fi negru */
-  resize: none; /* Impiedica utilizatorul sa deformeze caseta tragand de colturi */
+  color: black; 
+  resize: none; 
   transition: 0.1s ease;
   font-weight: 300;
+  box-sizing: border-box; /* ADAUGAT: previne iesirea din chenar */
+  margin-top:auto;
 }
-
 
 .profile-text p2{
     font: Manrope;
@@ -400,12 +404,123 @@ display: flex;
   opacity: 0.5;
 }
 
+
+
 .active-card {
   transform: scale(1); /* Marimea originala 100% */
   opacity: 1; /* Vizibil complet */
 }
 .inactive-card {
   transform: scale(0.97); /* Il micsoreaza subtil la 97% din marimea reala */
-  opacity: 0.6; /* Il face putin transparent ca sa para in plan secund */
+  opacity: 0.5; /* Il face putin transparent ca sa para in plan secund */
   box-shadow: none; /* Ii scoatem umbra ca sa para ca s-a "lasat" pe foaie */
 }
+
+
+
+
+
+
+.profile-text .video-input {
+  min-height: 60px;
+  height: 60px;
+  width: 100%; /* SCHIMBAT: De la 180% la 100% */
+  padding-left: 55px
+}
+
+/* Forțăm etichetele și tip-urile să stea pe propriul rând */
+.profile-text span {
+  display: block; /* SCHIMBAT: din flex in block */
+  color: #08090B;
+  font-weight: 550;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.profile-text .tip {
+  display: block; /* SCHIMBAT: din flex in block */
+  color: #08090B;
+  opacity: 0.5;
+  font-weight: 500;
+  margin-top: 2px;
+  margin-bottom: 24px; /* Adăugat spațiu înainte de buton */
+}
+
+/* Stilizarea corectă a butonului */
+.profile-text .generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrează textul în interiorul butonului */
+  gap: 10px; 
+  /* margin-top: 24px;  - L-am mutat la .tip ca să împingă butonul corect */
+  background-color: #08090B; 
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%; /* SCHIMBAT: De la 650px la 100% */
+  cursor: pointer;
+  box-sizing: border-box; /* ADAUGAT: previne iesirea din chenar */
+  margin-top: 70px;
+}
+
+.source-panel .profile-text {
+  margin-top: -15px; /* Trage tot cadranul cu caseta si butonul in sus. Poti pune -20px daca vrei si mai sus */
+}
+
+.badge-active, .badge-inactive {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.badge-active {
+  background-color: #08090B;
+  color: #FFFFFF;
+}
+
+.badge-inactive {
+  background-color: #F0F1F3; 
+  color: #08090B;
+}
+
+
+.link-icon {
+  position: absolute;
+  left: 40px; /* Distanta de la marginea din stanga a casetei */
+  top: 43%; /* O coboara exact la jumatatea inaltimii */
+  transform: translateY(-50%); /* Corectie fina pentru centrare perfecta */
+  pointer-events: none; /* Daca utilizatorul da click pe iconita, click-ul trece prin ea direct in caseta de text */
+}
+
+.final-tip {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  color: #08090B;
+  opacity: 0.5;
+  margin-top: -10px;
+  font-size: 13px;
+}
+
+.linev3{
+display: inline-block; /* Il forteaza sa devina o cutie solida, nu doar un text gol */
+  width: 650px;
+  height: 1px; /* Am pus 2px in loc de 1px ca sa iasa putin mai bine in evidenta */
+background-color: black;  opacity: 0.2;
+} 
+
+

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import UserForm from "./components/UserForm"
 import SegmentList from "./components/SegmentList"
+import Loading from "./components/Loading"
 import axios  from "axios"
 const App = () => {
   //boolean var to ask if we show feed or just the formular
@@ -34,11 +35,7 @@ const App = () => {
     }
   }
   if (loading == true) {
-    return (
-    <div style={{ textAlign: "center", marginTop: "80px" }}>
-        <h2>THE AI AGENT IS WORKING TO EXTRACT THE BEST SEGMENTS IN THE PODCAST!</h2> 
-         <p> PLEASE WAIT BEFORE MAKING ANY ACTION!</p>
-    </div>)
+    return <Loading />;
   }
   if (showFeed == false) {
     return (
