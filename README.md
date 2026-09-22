@@ -31,4 +31,4 @@ Then open http://localhost:5173 in your browser.
 
 ### Preview
 
-![PodTok Interface](./preview.png)
+![PodTok Interface](./preview.jpg)
